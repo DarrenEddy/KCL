@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KCL</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/reviews.css">
+    <link rel="stylesheet" href="css/archive.css">
+</head>
+
+<body>
+    <header>
+
+
+
+        <a href="/"> <img class="logo" src="./photo/logo.png" alt=""></a>
+        <Nav>
+            <ul class="navMenu">
+                <li><a href="/" class="menuA">Home</a></li>
+                <li><a href="/reviews" class="menuA">Reviews</a></li>
+                <li><a href="/articles">Articles</a></li>
+                <li><a href="/festivalWatch"> Festival Watch</a></li>
+                <li><a href="/archive">Archive</a></li>
+            </ul>
+        </Nav>
+
+
+
+    </header>
+
+    <main>
+ 
+        <div class="center">
+            <h1>Archive</h1>
+
+            <form action="/archive" method="post">
+                <input type="text" name="searchTitle" placeholder="Enter A Title">
+                <button type="submit">Search</button>
+            </form>
+            
+            <section class="reviews">
+                       {{#each articles}}
+                    <article>
+                        <form action="/article" method="get">
+                            <button type="submit" name="id" value="{{this.id}}">
+                                <div class="article">
+
+                                    <div class="imageContainer">
+
+                                        <img src="{{this.promoImage}}" alt="Photo">
+                                        <div class="dropDown">
+                                            {{!-- <p>{{this.author}}</p> --}}
+                                   
+                                            <div class="articleDate">
+                                                <p>{{this.dateFormat}}</p>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+                                    <div class="articleRight">
+                                        <h3 style="color:black;">{{this.title}}</h3>
+                                        <p>
+                                            {{this.infobox}}
+                                        </p>
+                                    </div>
+                                </div>
+                            </button>
+                        </form>
+                    </article>
+                    {{/each}}
+            </section>
+        </div>
+
+    </main>
+
+    <footer>
+
+    </footer>
+</body>
+
+</html>

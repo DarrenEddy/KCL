@@ -1,0 +1,146 @@
+
+.articles
+{
+    margin-left: 10vw;
+}
+
+.article
+{
+   /* margin: 0, 50px; */
+   
+    padding: 10px;
+ 
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 50px;
+   
+    width: auto;
+    height: 200px;
+    
+    text-align: left;
+
+}
+
+
+
+
+.articleDate
+{
+    position: absolute;
+    bottom:20px;
+    right: 20px;
+    color: white;
+    font-size: larger;
+    
+    
+}
+
+
+.imageContainer:hover {
+    width: 500px;
+    
+}
+
+.dropDown
+{
+
+    position: absolute;
+    right: 0;
+    display: none;
+    width:250px;
+    height: 100%;
+    border-radius: 15px;
+    background-image: linear-gradient(to left,rgba(0,0,0,255),rgba(0,0,0,0));
+}
+
+
+.imageContainer:hover .dropDown
+{
+    display: block;
+    
+    /* background-color: blueviolet; */
+}
+
+.imageContainer
+{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 350px;
+    min-width: 350px;
+    height: 100%;
+   
+    background-color: black;   
+    border-radius: 5px; 
+}
+
+article img
+{
+    object-fit:cover;
+    height:100%;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 5px;
+
+    
+}
+
+article button
+{
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    border: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+.articleLink
+{
+    text-decoration: none;
+    color: black;   
+}
+
+.articleRight
+{
+    width: auto;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+   
+}
+.articleRight h3
+{
+    font-size: 20pt;
+}
+
+.articleRight p
+{
+    font-size: 15pt;
+}
+.midText p
+{
+    
+    display: inline;
+    margin-right: 10px;
+}
+.midText p:first-of-type
+{
+    font-weight: bold;
+    color: #27ae60;
+}
+
+.reviews
+{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 3px;
+}
+
+.subtitle
+{
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

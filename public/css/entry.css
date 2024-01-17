@@ -1,0 +1,23 @@
+form
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+}
+form>input, form>textarea
+{
+    height: 20px;
+    width: 400px;
+    border: none;
+    text-align: center;
+}
+button
+{
+    height: 50px;
+    font-size: x-large;
+    width: 400px;
+    border: none;
+    border-radius: 15px;
+}

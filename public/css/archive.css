@@ -1,0 +1,28 @@
+form
+{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 50px;
+}
+button
+{
+    width: 100px;
+    height: 30px;
+    border: none;
+    background-color: #2ecc71;
+    border-radius:15px;
+}
+
+input
+{
+    width: 200px;
+    text-align: center;
+    border: none;
+    border-bottom: 1px solid black;
+    
+}
+input:focus
+{
+   outline: none; 
+}

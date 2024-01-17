@@ -1,0 +1,141 @@
+table
+{
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+.monthButton
+{
+    background-color: none;
+    border: none;
+    width: 50px;
+    height: 30px;
+}
+
+th
+{
+    padding: 10px 50px;
+    background-color: #2ecc71;
+}
+
+
+.calendarHeader
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.calendarHeader > h2
+{
+    width: 500px;
+}
+
+#calendar
+{
+    table-layout: fixed;
+    width: 100%;
+}
+
+
+#calendar td
+{
+    height:100px;
+    background-color: whitesmoke;
+    vertical-align: top;
+    text-align: center;
+    font-size: 20pt;
+    color: black;
+    width: 100%;
+    position: relative;
+}
+
+
+#calendar a 
+{
+    display:block;
+    color: black;
+    text-decoration: none;
+  
+    margin-bottom: 0px;
+    height: 100%;
+    
+}
+
+
+h3
+{
+
+    /* display: block; */
+    /* margin: 0px 5px; */
+    margin: 0px;
+    font-size: 50pt;
+    color: rgba(0,0,0,0.25);
+   
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  
+    
+}
+.eventCollection
+{
+    
+    margin-top: 0px;
+    padding-top: 5px;
+    flex-direction: column;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    gap: 5px;
+    
+}
+.event
+{
+    width: 100%;
+    height: 10px;
+    
+}
+
+.eventTitle
+{
+    text-align: center;
+    display: none;
+    font-size: 12pt;
+    color: white;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
+.sameDayEvent
+{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-left: 10px;
+    
+}
+
+td:hover .event
+{
+    height: 20px;
+}
+td:hover .eventTitle
+{
+    display: block;
+}
+.reviewIndicator
+{
+    padding: 0;
+    margin: 0;
+    color: black;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: rgba(0, 0, 0, 0.25);
+
+}

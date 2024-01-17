@@ -1,0 +1,60 @@
+
+.events
+{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    
+}
+
+.event
+{
+   padding: 10px;
+    background-color:aliceblue;
+    border-radius: 30px;
+    margin-bottom: 20px;
+}
+.eventTitle
+{
+    display: flex;
+    gap: 20px;
+ 
+}
+
+.eventDot
+{
+width: 30px;
+
+border-radius: 15px;
+z-index: 10;
+}
+
+
+
+.event h2
+{
+    text-align: left;
+    color: black;
+}
+
+h2
+{
+    font-size: 15pt;
+    color: black;
+}
+
+p
+{
+    color: black;
+}
+
+.articleDate p
+{
+    color: white;
+}
+
+
+.articleRight h2
+{
+    text-align: left;
+}

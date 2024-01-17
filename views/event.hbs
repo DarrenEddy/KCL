@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KCL</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/event.css">
+    <link rel="stylesheet" href="css/reviews.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+    <header>
+
+
+
+        <a href="/"> <img class="logo" src="./photo/logo.png" alt=""></a>
+        <Nav>
+            <ul class="navMenu">
+                <li><a href="/" class="menuA">Home</a></li>
+                <li><a href="/reviews" class="menuA">Reviews</a></li>
+                <li><a href="/articles">Articles</a></li>
+                <li><a href="/festivalWatch"> Festival Watch</a></li>
+                <li><a href="/archive">Archive</a></li>
+            </ul>
+        </Nav>
+
+
+
+    </header>
+
+    <main>
+
+        <div class="center">
+            {{#if events}}<h1>Events {{date}}</h1>{{/if}}
+            
+            <div class="events">
+            {{#each events}}
+            <div class="event">
+                <div class="eventTitle">
+            <span class="eventDot" style="background-color:{{this.color}};"></span>
+            
+            <h2>{{this.title}}</h2>
+
+            </div>
+            <p>{{this.date}} {{#if this.endDate}}   -   {{this.endDate}}{{/if}}</p>
+            </div>
+           
+            {{/each}}
+            </div>
+            {{#if reviews}}<h1>Published This Day</h1>{{/if}}
+            
+            {{#each reviews}}
+            <article>
+                        <form action="/article" method="get">
+                            <button type="submit" name="id" value="{{this.id}}">
+                                <div class="article">
+
+                                    <div class="imageContainer">
+
+                                        <img src="{{this.promoImage}}" alt="Photo">
+                                        <div class="dropDown">
+                                            {{!-- <p>{{this.author}}</p> --}}
+ 
+                                            <div class="articleDate">
+                                                <p>{{this.dateFormat}}</p>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+                                    <div class="articleRight">
+                                        <h2>{{this.title}}</h2>
+                                        <p>
+                                            {{this.infobox}}
+                                        </p>
+                                    </div>
+                                </div>
+                            </button>
+                        </form>
+                    </article>
+            {{/each}}
+
+
+        </div>
+
+
+    </main>
+
+    <footer>
+
+    </footer>
+</body>
+
+</html>

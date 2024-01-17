@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KCL</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/festival.css">
+    <script src="JS/calendar.js" defer></script>
+</head>
+
+<body>
+    <header>
+
+
+
+        <a href="/"> <img class="logo" src="./photo/logo.png" alt=""></a>
+        <Nav>
+            <ul class="navMenu">
+                <li><a href="/" class="menuA">Home</a></li>
+                <li><a href="/reviews" class="menuA">Reviews</a></li>
+                <li><a href="/articles">Articles</a></li>
+                <li><a href="/festivalWatch"> Festival Watch</a></li>
+                <li><a href="/archive">Archive</a></li>
+            </ul>
+        </Nav>
+
+
+
+    </header>
+
+    <main>
+        <div class="center">
+            <h1>Festival Watch</h1>
+            <div class="calendarHeader">
+                <form action="/lastMonth"><button class="monthButton" type="submit">PREV</button></form>
+                <h2>{{month}} {{year}}</h2>
+                <form action="/nextMonth"><button class="monthButton" type="submit">NEXT</button></form>
+
+            </div>
+
+
+            <table id="calendar">
+                <tr>
+                    {{#each dotw}}
+                    <th>{{this}}</th>
+                    {{/each}}
+                </tr>
+
+                {{#each calendar}}
+                <tr>
+
+                    {{#each this}}
+
+                    {{#if this.events}}
+                    <td>
+                        <a
+                            href=" /event?day={{this.day}}&events={{#each this.events}}{{this._id}}|{{/each}}&reviews={{#each this.reviews}}{{this.id}}|{{/each}}">
+                            <h3 class="buttonDate">{{this.day}}</h3>
+                            {{#if this.reviews}}<p class="reviewIndicator">R</p>{{/if}}
+
+                            <div class="eventCollection">
+
+                                {{#each this.events}}
+                                {{#if this.sameDay}}
+                                <div class="sameDayEvent" style="background-color: {{this.color}};"></div>
+                                {{else}}
+                                <div class="event" style="background-color: {{this.color}};">
+                                    <div class="eventTitle">{{this.title}}</div>
+                                </div>
+                                {{/if}}
+                                {{/each}}
+                            </div>
+
+                        </a>
+                    </td>
+                    {{else}}
+
+                    {{#if this.reviews}}
+                    <td>
+                        <a
+                            href=" /event?day={{this.day}}&events={{#each this.events}}{{this._id}}|{{/each}}&reviews={{#each this.reviews}}{{this.id}}|{{/each}}">
+                            <h3 class="buttonDate">{{this.day}}</h3>
+                            {{#if this.reviews}}<p class="reviewIndicator">R</p>{{/if}}
+
+                        </a>
+                    </td>
+                    {{else}}
+                    <td>
+                        <h3>{{this.day}}</h3>
+                    </td>
+                    {{/if}}
+                    {{/if}}
+
+                    {{/each}}
+                </tr>
+                {{/each}}
+            </table>
+        </div>
+
+
+
+
+
+    </main>
+
+    <footer>
+
+    </footer>
+</body>
+
+</html>

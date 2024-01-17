@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KCL</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/article.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+    <header>
+
+
+
+        <a href="/"> <img class="logo" src="./photo/logo.png" alt=""></a>
+        <Nav>
+            <ul class="navMenu">
+                <li><a href="/" class="menuA">Home</a></li>
+                <li><a href="/reviews" class="menuA">Reviews</a></li>
+                <li><a href="/articles">Articles</a></li>
+                <li><a href="/festivalWatch"> Festival Watch</a></li>
+                <li><a href="/archive">Archive</a></li>
+            </ul>
+        </Nav>
+
+
+
+    </header>
+
+    <main>
+
+        <div class="center">
+            <div class="articleBanner">
+                <img src="{{article.promoImage}}" class="bannerImage" alt="{{article.title}} Promo Image">
+                <h1>{{article.title}}</h1>
+
+            </div>
+
+            {{#if article.subtitle}}
+            <h2 class="subtitle">{{article.subtitle}}</h2>
+            {{else}}
+            <br />
+            {{/if}}
+            <h3 class="author">{{article.author}}</h3>
+
+            <br />
+
+
+            {{#if content}}
+            <div class="content">
+
+                <div class="socials">
+                    <a href="#" class="fa fa-facebook"></a>
+                    <a href="#" class="fa fa-twitter"></a>
+                    <a href="#" class="fa fa-reddit"></a>
+                </div>
+
+                <div class="review">
+                    {{#each content}}
+                    <p>
+                        {{this}}
+                    </p>
+
+                    {{/each}}
+                </div>
+            </div>
+            {{else}}
+            <p style="color: red;"> NO REVIEW </p>
+            {{/if}}
+
+
+        </div>
+
+
+    </main>
+
+    <footer>
+
+    </footer>
+</body>
+
+</html>
